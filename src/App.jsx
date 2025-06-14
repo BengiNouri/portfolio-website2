@@ -1,16 +1,16 @@
-import React from 'react';
-import './App.css';
-import { Button } from './components/ui/button';
+import React from 'react'
+import './App.css'
+import { Button } from './components/ui/button'
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle
-} from './components/ui/card';
-import { Badge } from './components/ui/badge';
-import { Input } from './components/ui/input';
-import { Textarea } from './components/ui/textarea';
+  CardTitle,
+} from './components/ui/card'
+import { Badge } from './components/ui/badge'
+import { Input } from './components/ui/input'
+import { Textarea } from './components/ui/textarea'
 import {
   Mail,
   Phone,
@@ -18,26 +18,23 @@ import {
   Github,
   Linkedin,
   ExternalLink,
-  Star,
-  ChevronDown
-} from 'lucide-react';
-import { motion } from 'framer-motion';
+  ChevronDown,
+} from 'lucide-react'
+import { motion } from 'framer-motion'
 
 // Import assets
-import heroBackground from './assets/hero_background.png';
-import professionalAvatar from './assets/Benjamin.png';
-import projectPlaceholder1 from './assets/project_placeholder_1.png';
-import projectPlaceholder2 from './assets/project_placeholder_2.png';
-import projectPlaceholder3 from './assets/project_placeholder_3.png';
+import heroBackground from './assets/hero_background.png'
+import professionalAvatar from './assets/Benjamin.png'
+import projectPlaceholder1 from './assets/project_placeholder_1.png'
+import projectPlaceholder2 from './assets/project_placeholder_2.png'
+import projectPlaceholder3 from './assets/project_placeholder_3.png'
 
 function App() {
   const scrollToSection = (sectionId) => {
-    document.getElementById(sectionId)?.scrollIntoView({
-      behavior: 'smooth'
-    });
-  };
+    document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
+  }
 
-  // Featured projects
+  // Featured Projects
   const projects = [
     {
       id: 1,
@@ -47,7 +44,7 @@ function App() {
       image: projectPlaceholder1,
       technologies: ['React', 'D3.js', 'Node.js', 'MongoDB'],
       liveUrl: '#',
-      githubUrl: '#'
+      githubUrl: '#',
     },
     {
       id: 2,
@@ -57,7 +54,7 @@ function App() {
       image: projectPlaceholder2,
       technologies: ['React Native', 'Firebase', 'Stripe', 'Redux'],
       liveUrl: '#',
-      githubUrl: '#'
+      githubUrl: '#',
     },
     {
       id: 3,
@@ -67,36 +64,11 @@ function App() {
       image: projectPlaceholder3,
       technologies: ['Next.js', 'Tailwind CSS', 'Sanity CMS', 'Vercel'],
       liveUrl: '#',
-      githubUrl: '#'
-    }
-  ];
-
-  // Client testimonials
-  const testimonials = [
-    {
-      name: 'Alice Johnson',
-      role: 'Data Scientist at TechCorp',
-      content:
-        "Benjamin's expertise in data engineering and machine learning has been invaluable to our projects. His ability to deliver high-quality solutions on time is impressive.",
-      rating: 5
+      githubUrl: '#',
     },
-    {
-      name: 'Michael Smith',
-      role: 'CTO at InnovateX',
-      content:
-        'Working with Benjamin has been a game-changer for our team. His innovative approach and technical skills have helped us achieve our goals efficiently.',
-      rating: 5
-    },
-    {
-      name: 'Sarah Lee',
-      role: 'Product Manager at DataSolutions',
-      content:
-        "Benjamin's attention to detail and problem-solving skills make him a great asset. He consistently exceeds expectations with his work.",
-      rating: 5
-    }
-  ];
+  ]
 
-  // Grouped skills & tools
+  // Grouped Skills & Tools
   const skills = [
     {
       category: 'Languages & Frameworks',
@@ -105,21 +77,21 @@ function App() {
           name: 'Python',
           proficiency: 'Advanced',
           percent: 70,
-          tools: ['Pandas', 'FastAPI', 'Flask']
+          tools: ['Pandas', 'FastAPI', 'Flask'],
         },
         {
           name: 'SQL',
           proficiency: 'Intermediate',
           percent: 65,
-          tools: ['PostgreSQL', 'MySQL', 'Snowflake']
+          tools: ['PostgreSQL', 'MySQL', 'Snowflake'],
         },
         {
           name: 'Node.js',
           proficiency: 'Learning',
           percent: 50,
-          tools: ['Express', 'NestJS']
-        }
-      ]
+          tools: ['Express', 'NestJS'],
+        },
+      ],
     },
     {
       category: 'Data Engineering & Analytics',
@@ -128,15 +100,15 @@ function App() {
           name: 'Data Engineering',
           proficiency: 'Advanced',
           percent: 75,
-          tools: ['Airflow', 'DBT', 'Kafka']
+          tools: ['Airflow', 'DBT', 'Kafka'],
         },
         {
           name: 'Data Science',
           proficiency: 'Intermediate',
           percent: 70,
-          tools: ['Scikit-learn', 'Statsmodels']
-        }
-      ]
+          tools: ['Scikit-learn', 'Statsmodels'],
+        },
+      ],
     },
     {
       category: 'Machine Learning & AI',
@@ -145,17 +117,17 @@ function App() {
           name: 'Machine Learning',
           proficiency: 'Intermediate',
           percent: 70,
-          tools: ['TensorFlow', 'PyTorch']
+          tools: ['TensorFlow', 'PyTorch'],
         },
         {
           name: 'AI Models',
           proficiency: 'Intermediate',
           percent: 65,
-          tools: ['OpenAI API', 'LLMs']
-        }
-      ]
-    }
-  ];
+          tools: ['OpenAI API', 'LLMs'],
+        },
+      ],
+    },
+  ]
 
   return (
     <div className="min-h-screen bg-background">
@@ -171,14 +143,7 @@ function App() {
               My Portfolio
             </motion.div>
             <div className="hidden md:flex space-x-8">
-              {[
-                'home',
-                'about',
-                'projects',
-                'skills',
-                'testimonials',
-                'contact'
-              ].map((sec) => (
+              {['home', 'about', 'projects', 'skills', 'contact'].map((sec) => (
                 <button
                   key={sec}
                   onClick={() => scrollToSection(sec)}
@@ -226,6 +191,7 @@ function App() {
               ML/AI, and End-to-End Projects.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              {/* Both buttons now match */}
               <Button
                 size="lg"
                 onClick={() => scrollToSection('projects')}
@@ -235,9 +201,8 @@ function App() {
               </Button>
               <Button
                 size="lg"
-                variant="outline"
                 onClick={() => scrollToSection('contact')}
-                className="bg-transparent border-white text-white hover:bg-white hover:text-black"
+                className="bg-white text-black hover:bg-white/90"
               >
                 Get In Touch
               </Button>
@@ -270,8 +235,8 @@ function App() {
               Passionate data professional with a focus on innovative solutions
             </p>
           </motion.div>
+
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            {/* Story */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -282,16 +247,15 @@ function App() {
               <p className="text-muted-foreground mb-6 leading-relaxed">
                 I'm Benjamin Sajad Nouri, a 26-year-old recent graduate from
                 Aarhus University (Cand.merc.BI). My passion lies in the
-                intersection of data & technology, where I tackle end-to-end
-                projects in Data Engineering, Analytics, ML/AI and more.
+                intersection of data & technology, tackling end-to-end projects
+                in Data Engineering, Analytics, ML/AI and more.
               </p>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                My core expertise is SQL & Python, and I’m expanding into Node.js
-                and modern web stacks. I thrive when solving real-world problems
-                with scalable, maintainable code.
+                I specialize in SQL & Python and am expanding into Node.js and
+                modern web stacks. I thrive on solving real-world problems with
+                scalable, maintainable code.
               </p>
             </motion.div>
-            {/* Education & Badges */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -360,6 +324,7 @@ function App() {
               A showcase of my recent work
             </p>
           </motion.div>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, idx) => (
               <motion.div
@@ -447,7 +412,7 @@ function App() {
                   <div className="flex justify-between">
                     <span className="font-medium">{name}</span>
                     <span className="text-muted-foreground">
-                      {proficiency} ({percent}%)
+                      {proficiency} ({percent}% )
                     </span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2 mt-1">
@@ -469,10 +434,166 @@ function App() {
         </div>
       </section>
 
-      {/* Services, Testimonials, Contact & Footer unchanged… */}
+      {/* Contact Section */}
+      <section id="contact" className="py-20">
+        <div className="container mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Get In Touch
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Ready to start your next project? Let's work together!
+            </p>
+          </motion.div>
+          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+              className="space-y-8"
+            >
+              <div>
+                <h3 className="text-2xl font-semibold mb-6">
+                  Contact Information
+                </h3>
+                <div className="space-y-4">
+                  <div className="flex items-center space-x-3">
+                    <Mail className="w-5 h-5 text-primary" />
+                    <span>Benjamin Sajad Nouri</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <Phone className="w-5 h-5 text-primary" />
+                    <span>+45 28 72 33 23</span>
+                  </div>
+                  <div className="flex items-center space-x-3">
+                    <MapPin className="w-5 h-5 text-primary" />
+                    <span>Aarhus, Denmark</span>
+                  </div>
+                </div>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-4">Follow Me</h3>
+                <div className="flex space-x-4">
+                  <Button variant="outline" size="icon" asChild>
+                    <a
+                      href="https://github.com/BengiNouri"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Github className="w-4 h-4" />
+                    </a>
+                  </Button>
+                  <Button variant="outline" size="icon" asChild>
+                    <a
+                      href="https://www.linkedin.com/in/benjamin-n-233813167/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Linkedin className="w-4 h-4" />
+                    </a>
+                  </Button>
+                </div>
+              </div>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <Card>
+                <CardHeader>
+                  <CardTitle>Send a Message</CardTitle>
+                  <CardDescription>
+                    Fill out the form below and I'll get back to you as soon as possible.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <form className="space-y-4">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div>
+                        <label
+                          htmlFor="firstName"
+                          className="block text-sm font-medium mb-2"
+                        >
+                          First Name
+                        </label>
+                        <Input id="firstName" placeholder="...." />
+                      </div>
+                      <div>
+                        <label
+                          htmlFor="lastName"
+                          className="block text-sm font-medium mb-2"
+                        >
+                          Last Name
+                        </label>
+                        <Input id="lastName" placeholder="...." />
+                      </div>
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="email"
+                        className="block text-sm font-medium mb-2"
+                      >
+                        Email
+                      </label>
+                      <Input id="email" type="email" placeholder="...." />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="subject"
+                        className="block text-sm font-medium mb-2"
+                      >
+                        Subject
+                      </label>
+                      <Input id="subject" placeholder="...." />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="message"
+                        className="block text-sm font-medium mb-2"
+                      >
+                        Message
+                      </label>
+                      <Textarea
+                        id="message"
+                        placeholder="Tell me about your project..."
+                        rows={5}
+                      />
+                    </div>
+                    <Button type="submit" className="w-full">
+                      Send Message
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </div>
+        </div>
+      </section>
 
+      {/* Footer */}
+      <footer className="bg-muted py-12">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <p className="text-muted-foreground mb-4">
+              © 2024 Benjamin Sajad Nouri. All rights reserved.
+            </p>
+            <p className="text-sm text-muted-foreground">
+              Built with React, Tailwind CSS, and lots of ☕
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
