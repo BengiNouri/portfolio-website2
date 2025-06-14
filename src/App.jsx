@@ -251,7 +251,7 @@ function App() {
                 in Data Engineering, Analytics, ML/AI and more.
               </p>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                I specialize in SQL & Python and am expanding into Node.js and
+                I specialize in SQL & Python and i'm expanding into Node.js and
                 modern web stacks. I thrive on solving real-world problems with
                 scalable, maintainable code.
               </p>
