@@ -78,15 +78,66 @@ function App() {
     }
   ];
 
-  const skills = [
-    { name: "SQL", level: 65 },
-    { name: "Python", level: 70 },
-    { name: "Data Engineering", level: 75 },
-    { name: "Data Science", level: 70 },
-    { name: "Machine Learning", level: 70 },
-    { name: "AI Models", level: 65 },
-    { name: "Node.js (in progress)", level: 50 }
+    const skills = [
+    {
+      category: "Languages & Frameworks",
+      items: [
+        {
+          name: "Python",
+          proficiency: "Advanced",
+          percent: 70,
+          tools: ["Pandas", "FastAPI", "Flask"]
+        },
+        {
+          name: "SQL",
+          proficiency: "Intermediate",
+          percent: 65,
+          tools: ["PostgreSQL", "MySQL", "Snowflake"]
+        },
+        {
+          name: "Node.js",
+          proficiency: "Learning",
+          percent: 50,
+          tools: ["Express", "NestJS"]
+        }
+      ]
+    },
+    {
+      category: "Data Engineering & Analytics",
+      items: [
+        {
+          name: "Data Engineering",
+          proficiency: "Advanced",
+          percent: 75,
+          tools: ["Airflow", "DBT", "Kafka"]
+        },
+        {
+          name: "Data Science",
+          proficiency: "Intermediate",
+          percent: 70,
+          tools: ["Scikit-learn", "Statsmodels"]
+        }
+      ]
+    },
+    {
+      category: "Machine Learning & AI",
+      items: [
+        {
+          name: "Machine Learning",
+          proficiency: "Intermediate",
+          percent: 70,
+          tools: ["TensorFlow", "PyTorch"]
+        },
+        {
+          name: "AI Models",
+          proficiency: "Intermediate",
+          percent: 65,
+          tools: ["OpenAI API", "LLMs"]
+        }
+      ]
+    }
   ];
+
 
   return (
     <div className="min-h-screen bg-background">
@@ -145,7 +196,12 @@ function App() {
                 size="lg"
                 variant="outline"
                 onClick={() => scrollToSection('contact')}
-                className="border-white text-white hover:bg-white hover:text-black"
+                className="
+                  bg-transparent      /* make sure it’s see-through */
+                  border-white        /* keep the white outline */
+                  text-white          /* white text on the dark hero */
+                  hover:bg-white      /* turn solid white on hover */
+                  hover:text-black    /* switch to black text on hover */ " 
               >
                 Get In Touch
               </Button>
