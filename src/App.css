@@ -118,10 +118,10 @@
     @apply bg-background text-foreground;
   }
 }
-/* Lightning underline animation */
+/* Lightning underline animation (only in) */
 @keyframes lightning {
-  0%, 100% { width: 0; }
-  50%      { width: 100%; }
+  0%   { width: 0; }
+  100% { width: 100%; }
 }
 
 @layer components {
@@ -137,9 +137,11 @@
     height: 2px;
     background-color: var(--color-primary);
     width: 0;
+    /* optional: smooth shrink on mouse-leave */
     transition: width 0.2s ease-out;
   }
   .nav-btn:hover::before {
+    /* animate from 0→100% and keep it full */
     animation: lightning 0.3s ease-out forwards;
   }
 }
