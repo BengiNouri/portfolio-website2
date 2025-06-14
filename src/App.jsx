@@ -185,10 +185,9 @@ function App() {
               Data Engineer, Scientist & ML/AI Specialist
             </p>
             <p className="text-lg mb-12 max-w-3xl mx-auto opacity-90">
-              Just graduated from Cand.merc.BI, I bring a curious,
-              eager-to-learn approach, passionate about state-of-the-art
-              models. I specialize in Data Engineering, Science, Analytics,
-              ML/AI, and End-to-End Projects.
+              Recently graduated with a Cand.merc.BI degree, I bring a strong curiosity and a continuous learning mindset, 
+              combined with a deep passion for state-of-the-art AI and machine learning models. 
+              My expertise spans Data Engineering, Data Science, Analytics, and the execution of end-to-end data projects.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               {/* Both buttons now match */}
@@ -245,15 +244,20 @@ function App() {
             >
               <h3 className="text-2xl font-semibold mb-6">My Story</h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                I'm Benjamin Sajad Nouri, a 26-year-old recent graduate from
-                Aarhus University (Cand.merc.BI). My passion lies in the
-                intersection of data & technology, tackling end-to-end projects
-                in Data Engineering, Analytics, ML/AI and more.
+                I'm Benjamin Sajad Nouri, a 26-year-old recent graduate from Aarhus University with a Cand.merc.BI degree. Since completing my studies, 
+                I’ve been actively looking for a full-time opportunity where I can contribute to real-world projects involving data, technology and AI.
               </p>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                I specialize in SQL & Python and i'm expanding into Node.js and
-                modern web stacks. I thrive on solving real-world problems with
-                scalable, maintainable code.
+                I specialize in SQL and Python for database management, data analysis and developing scripts for applications such as task automation or web scraping. 
+                I'm also expanding my skill set into Node.js and modern web stacks to stay adaptable and well-rounded in my work.
+              </p>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                My passion lies in working across the full data pipeline, from engineering and analytics to machine learning and AI. 
+                I enjoy building scalable and maintainable solutions that solve practical business problems.
+              </p>
+              <p className="text-muted-foreground mb-6 leading-relaxed">
+                As a recent graduate, I bring the latest academic knowledge, particularly in AI and machine learning models. 
+                I'm ready to help companies apply these tools to create value and stay competitive in a rapidly evolving digital world.
               </p>
             </motion.div>
             <motion.div
