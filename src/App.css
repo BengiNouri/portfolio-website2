@@ -118,3 +118,28 @@
     @apply bg-background text-foreground;
   }
 }
+/* Lightning underline animation */
+@keyframes lightning {
+  0%, 100% { width: 0; }
+  50%      { width: 100%; }
+}
+
+@layer components {
+  .nav-btn {
+    position: relative;
+    overflow: hidden;
+  }
+  .nav-btn::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2px;
+    background-color: var(--color-primary);
+    width: 0;
+    transition: width 0.2s ease-out;
+  }
+  .nav-btn:hover::before {
+    animation: lightning 0.3s ease-out forwards;
+  }
+}

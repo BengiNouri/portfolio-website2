@@ -140,14 +140,14 @@ function App() {
               animate={{ opacity: 1, x: 0 }}
               className="text-2xl font-bold"
             >
-              My Portfolio
+              Portfolio
             </motion.div>
             <div className="hidden md:flex space-x-8">
               {['home', 'about', 'projects', 'skills', 'contact'].map((sec) => (
                 <button
                   key={sec}
                   onClick={() => scrollToSection(sec)}
-                  className="hover:text-primary transition-colors"
+                  className="nav-btn px-1 hover:text-primary transition-colors"
                 >
                   {sec.charAt(0).toUpperCase() + sec.slice(1)}
                 </button>
