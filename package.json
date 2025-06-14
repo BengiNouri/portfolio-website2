@@ -1,11 +1,14 @@
 {
   "name": "portfolio-website",
+  "homepage": "https://BengiNouri.github.io/portfolio-website2",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "predeploy": "pnpm run build",
+    "deploy": "gh-pages -d dist",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -61,6 +64,7 @@
     "zod": "^3.24.4"
   },
   "devDependencies": {
+    "gh-pages": "^5.0.0",
     "@eslint/js": "^9.25.0",
     "@types/react": "^19.1.2",
     "@types/react-dom": "^19.1.2",
