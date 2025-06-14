@@ -5,7 +5,14 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(),tailwindcss()],
+  // 🛠️ Tell Vite your GitHub Pages sub‐path
+  base: '/portfolio-website2/',
+
+  plugins: [
+    react(),
+    tailwindcss()
+  ],
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
