@@ -244,7 +244,7 @@ function App() {
             >
               <h3 className="text-2xl font-semibold mb-6">My Story</h3>
               <p className="text-muted-foreground mb-6 leading-relaxed">
-                I'm Benjamin Sajad Nouri, a 26-year-old recent graduate from Aarhus University with a Cand.merc.BI degree. Since completing my studies, 
+                My name is Benjamin Sajad Nouri, a 26-year-old recent graduate from Aarhus University with a Cand.merc.BI degree. Since completing my studies, 
                 I’ve been actively looking for a full-time opportunity where I can contribute to real-world projects involving data, technology and AI.
               </p>
               <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -275,7 +275,7 @@ function App() {
                   <div className="space-y-4">
                     <div>
                       <h4 className="font-semibold">
-                        MSc in Business Intelligence (Cand.merc.BI)
+                        MSc in Business Intelligence
                       </h4>
                       <p className="text-muted-foreground">
                         Aarhus University • 2023–2025
