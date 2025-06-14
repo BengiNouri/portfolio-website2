@@ -98,13 +98,13 @@ function App() {
       items: [
         {
           name: 'Data Engineering',
-          proficiency: 'Advanced',
-          percent: 75,
+          proficiency: 'Intermediate',
+          percent: 65,
           tools: ['Airflow', 'DBT', 'Kafka'],
         },
         {
           name: 'Data Science',
-          proficiency: 'Intermediate',
+          proficiency: 'Advanced',
           percent: 70,
           tools: ['Scikit-learn', 'Statsmodels'],
         },
@@ -115,14 +115,14 @@ function App() {
       items: [
         {
           name: 'Machine Learning',
-          proficiency: 'Intermediate',
+          proficiency: 'Advanced',
           percent: 70,
           tools: ['TensorFlow', 'PyTorch'],
         },
         {
           name: 'AI Models',
-          proficiency: 'Intermediate',
-          percent: 65,
+          proficiency: 'Advanced',
+          percent: 70,
           tools: ['OpenAI API', 'LLMs'],
         },
       ],
