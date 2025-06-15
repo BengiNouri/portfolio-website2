@@ -176,7 +176,7 @@ function App() {
             <img
               src={professionalAvatar}
               alt="Benjamin Sajad Nouri"
-              className="w-32 h-32 rounded-full mx-auto mb-8 border-4 border-white/20"
+              className="w-40 h-40 rounded-full mx-auto mb-8 border-4 border-white/20"
             />
             <h1 className="text-5xl md:text-7xl font-bold mb-6">
               Benjamin Sajad Nouri
