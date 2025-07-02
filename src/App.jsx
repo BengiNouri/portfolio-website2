@@ -348,12 +348,14 @@ function App() {
                 viewport={{ once: true }}
               >
                 <Card className="group hover:shadow-lg transition-all duration-300 overflow-hidden">
-                  <div className="relative overflow-hidden">
+                  {/* 16:9 Thumbnail */}
+                  <div className="relative w-full aspect-video overflow-hidden">
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                     />
+                    {/* overlay on hover */}
                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center space-x-4">
                       <Button size="sm" variant="secondary" asChild>
                         <a
@@ -377,10 +379,12 @@ function App() {
                       </Button>
                     </div>
                   </div>
+
                   <CardHeader>
                     <CardTitle>{project.title}</CardTitle>
                     <CardDescription>{project.description}</CardDescription>
                   </CardHeader>
+
                   <CardContent>
                     <div className="flex flex-wrap gap-2">
                       {project.technologies.map((tech) => (
@@ -637,7 +641,7 @@ function App() {
         <div className="container mx-auto px-4">
           <div className="text-center">
             <p className="text-muted-foreground mb-4">
-              © 2024 Benjamin Sajad Nouri. All rights reserved.
+              © 2025 Benjamin Sajad Nouri. All rights reserved.
             </p>
             <p className="text-sm text-muted-foreground">
               Built with React, Tailwind CSS, and lots of ☕
