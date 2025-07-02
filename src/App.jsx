@@ -37,15 +37,15 @@ function App() {
   // Featured Projects
   const projects = [
     {
-      id: 1,
-      title: 'Analytics Dashboard',
+      id: 4,
+      title: 'Stock Sentiment & Recommendation System',
       description:
-        'A comprehensive dashboard for data visualization and analytics with real-time updates and interactive charts.',
-      image: projectPlaceholder1,
-      technologies: ['React', 'D3.js', 'Node.js', 'MongoDB'],
-      liveUrl: '#',
-      githubUrl: '#',
-    },
+        'An end-to-end pipeline that scrapes financial news, enriches it with market data, classifies sentiment using FinBERT, and generates buy/sell recommendations using GPT-4o-mini.',
+      image: projectPlaceholder1, // Replace with your actual image or create a custom one
+      technologies: ['Python', 'Firebase', 'FinBERT', 'GPT-4o-mini'],
+      liveUrl: 'https://github.com/BengiNouri/Master-Thesis', // Optional: add a hosted link if you deploy it later
+      githubUrl: 'https://github.com/BengiNouri/Master-Thesis',
+    },  
     {
       id: 2,
       title: 'E-commerce Mobile App',
