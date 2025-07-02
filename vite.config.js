@@ -5,8 +5,8 @@ import path from 'path'
 
 // https://vite.dev/config/
 export default defineConfig({
-  // 🛠️ Use relative paths so GitHub Pages can find assets
-  base: './',
+  // Use your GitHub-Pages repo name here:
+  base: '/portfolio-website2/',
 
   plugins: [
     react(),

@@ -1,5 +1,7 @@
-import React from 'react'
+// src/App.jsx
+import React, { useState } from 'react'
 import './App.css'
+
 import { Button } from './components/ui/button'
 import {
   Card,
@@ -22,6 +24,9 @@ import {
 } from 'lucide-react'
 import { motion } from 'framer-motion'
 
+// Formspree imports must *not* include React!
+import { useForm, ValidationError } from '@formspree/react'
+
 // Import assets
 import heroBackground from './assets/hero_background.png'
 import professionalAvatar from './assets/Benjamin.png'
@@ -29,11 +34,15 @@ import projectPlaceholder1 from './assets/project_placeholder_1.png'
 import projectPlaceholder2 from './assets/project_placeholder_2.png'
 import projectPlaceholder3 from './assets/project_placeholder_3.png'
 
+
 function App() {
   const scrollToSection = (sectionId) => {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth' })
   }
 
+  // ⬇️ Add the Formspree hook right here
+  const [state, handleSubmit] = useForm("mqabjzon")
+  const [visitor, setVisitor] = useState({ firstName: '', email: '' })
   // Featured Projects
   const projects = [
     {
@@ -438,150 +447,190 @@ function App() {
         </div>
       </section>
 
-      {/* Contact Section */}
-      <section id="contact" className="py-20">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Get In Touch
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Ready to start your next project? Let's work together!
-            </p>
-          </motion.div>
-          <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-              className="space-y-8"
-            >
-              <div>
-                <h3 className="text-2xl font-semibold mb-6">
-                  Contact Information
-                </h3>
-                <div className="space-y-4">
-                  <div className="flex items-center space-x-3">
-                    <Mail className="w-5 h-5 text-primary" />
-                    <span>Benjamin Sajad Nouri</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <Phone className="w-5 h-5 text-primary" />
-                    <span>+45 28 72 33 23</span>
-                  </div>
-                  <div className="flex items-center space-x-3">
-                    <MapPin className="w-5 h-5 text-primary" />
-                    <span>Aarhus, Denmark</span>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Follow Me</h3>
-                <div className="flex space-x-4">
-                  <Button variant="outline" size="icon" asChild>
-                    <a
-                      href="https://github.com/BengiNouri"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github className="w-4 h-4" />
-                    </a>
-                  </Button>
-                  <Button variant="outline" size="icon" asChild>
-                    <a
-                      href="https://www.linkedin.com/in/benjamin-n-233813167/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Linkedin className="w-4 h-4" />
-                    </a>
-                  </Button>
-                </div>
-              </div>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              viewport={{ once: true }}
-            >
-              <Card>
-                <CardHeader>
-                  <CardTitle>Send a Message</CardTitle>
-                  <CardDescription>
-                    Fill out the form below and I'll get back to you as soon as possible.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <form className="space-y-4">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div>
-                        <label
-                          htmlFor="firstName"
-                          className="block text-sm font-medium mb-2"
-                        >
-                          First Name
-                        </label>
-                        <Input id="firstName" placeholder="...." />
-                      </div>
-                      <div>
-                        <label
-                          htmlFor="lastName"
-                          className="block text-sm font-medium mb-2"
-                        >
-                          Last Name
-                        </label>
-                        <Input id="lastName" placeholder="...." />
-                      </div>
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="email"
-                        className="block text-sm font-medium mb-2"
-                      >
-                        Email
-                      </label>
-                      <Input id="email" type="email" placeholder="...." />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="subject"
-                        className="block text-sm font-medium mb-2"
-                      >
-                        Subject
-                      </label>
-                      <Input id="subject" placeholder="...." />
-                    </div>
-                    <div>
-                      <label
-                        htmlFor="message"
-                        className="block text-sm font-medium mb-2"
-                      >
-                        Message
-                      </label>
-                      <Textarea
-                        id="message"
-                        placeholder="Tell me about your project..."
-                        rows={5}
-                      />
-                    </div>
-                    <Button type="submit" className="w-full">
-                      Send Message
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </motion.div>
+{/* Contact Section */}
+<section id="contact" className="py-20">
+  <div className="container mx-auto px-4">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.6 }}
+      viewport={{ once: true }}
+      className="text-center mb-16"
+    >
+      <h2 className="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
+      <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        Ready to start your next project? Let's work together!
+      </p>
+    </motion.div>
+
+    <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+      {/* ← Left Column: Your Static Contact Info & Social Links */}
+      <motion.div
+        initial={{ opacity: 0, x: -20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="space-y-8"
+      >
+        <div>
+          <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
+          <div className="space-y-4">
+            <div className="flex items-center space-x-3">
+              <Mail className="w-5 h-5 text-primary" />
+              <span>Benjamin Sajad Nouri</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <Phone className="w-5 h-5 text-primary" />
+              <span>+45 28 72 33 23</span>
+            </div>
+            <div className="flex items-center space-x-3">
+              <MapPin className="w-5 h-5 text-primary" />
+              <span>Aarhus, Denmark</span>
+            </div>
           </div>
         </div>
-      </section>
+
+        <div>
+          <h3 className="text-xl font-semibold mb-4">Follow Me</h3>
+          <div className="flex space-x-4">
+            <Button variant="outline" size="icon" asChild>
+              <a
+                href="https://github.com/BengiNouri"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Github className="w-4 h-4" />
+              </a>
+            </Button>
+            <Button variant="outline" size="icon" asChild>
+              <a
+                href="https://www.linkedin.com/in/benjamin-n-233813167/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+            </Button>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* → Right Column: Formspree Contact Form */}
+      <motion.div
+        initial={{ opacity: 0, x: 20 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+      >
+        <Card>
+          <CardHeader>
+            <CardTitle>Send a Message</CardTitle>
+            <CardDescription>
+              Fill out the form below and I'll get back to you as soon as possible.
+            </CardDescription>
+          </CardHeader>
+
+          <CardContent>
+            {state.succeeded ? (
+              <div className="text-center text-green-600 font-semibold text-xl">
+                ✅ Thanks for reaching out, {visitor.firstName}!  
+                I’ll get back to you at {visitor.email} soon.
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-4">
+                {/* Name Fields */}
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label htmlFor="firstName" className="block text-sm font-medium mb-2">
+                      First Name
+                    </label>
+                    <Input
+                      id="firstName"
+                      name="firstName"
+                      placeholder="Your first name"
+                      className="w-full"
+                      onChange={e =>
+                        setVisitor(v => ({ ...v, firstName: e.target.value }))
+                      }
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="lastName" className="block text-sm font-medium mb-2">
+                      Last Name
+                    </label>
+                    <Input
+                      id="lastName"
+                      name="lastName"
+                      placeholder="Your last name"
+                      className="w-full"
+                    />
+                  </div>
+                </div>
+
+                {/* Email */}
+                <div>
+                  <label htmlFor="email" className="block text-sm font-medium mb-2">
+                    Email
+                  </label>
+                  <Input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="you@example.com"
+                    className="w-full"
+                    onChange={e =>
+                      setVisitor(v => ({ ...v, email: e.target.value }))
+                    }
+                  />
+                  <ValidationError prefix="Email" field="email" errors={state.errors} />
+                </div>
+
+                {/* Subject */}
+                <div>
+                  <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                    Subject
+                  </label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    placeholder="Project subject"
+                    className="w-full"
+                  />
+                </div>
+
+                {/* Message */}
+                <div>
+                  <label htmlFor="message" className="block text-sm font-medium mb-2">
+                    Message
+                  </label>
+                  <Textarea
+                    id="message"
+                    name="message"
+                    rows={5}
+                    placeholder="Tell me about your project..."
+                    className="w-full"
+                  />
+                  <ValidationError prefix="Message" field="message" errors={state.errors} />
+                </div>
+
+                {/* Submit */}
+                <Button
+                  type="submit"
+                  disabled={state.submitting}
+                  className="w-full bg-primary text-white py-2 px-4 rounded hover:bg-primary/90 transition"
+                >
+                  {state.submitting ? "Sending..." : "Send Message"}
+                </Button>
+              </form>
+            )}
+          </CardContent>
+        </Card>
+      </motion.div>
+    </div>
+  </div>
+</section>
+
+
 
       {/* Footer */}
       <footer className="bg-muted py-12">
