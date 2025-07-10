@@ -57,13 +57,13 @@ function App() {
     },  
     {
       id: 2,
-      title: 'E-commerce Mobile App',
+      title: 'Danish Energy Analytics Platform',
       description:
-        'Modern mobile application for online shopping with intuitive UI/UX and seamless payment integration.',
+        'End-to-end data platform that ingests Danish power-grid data, pipes it into a Postgres warehouse with dbt, runs ML price forecasts, and serves live dashboards via React + Flask APIs.',
       image: projectPlaceholder2,
-      technologies: ['React Native', 'Firebase', 'Stripe', 'Redux'],
-      liveUrl: '#',
-      githubUrl: '#',
+      technologies: ['Python', 'PostgreSQL', 'dbt', 'TensorFlow', 'React', 'Flask', 'Docker'],
+      liveUrl: 'https://github.com/BengiNouri/Danish-energy',
+      githubUrl: 'https://github.com/BengiNouri/Danish-energy',
     },
     {
       id: 3,
