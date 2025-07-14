@@ -67,14 +67,14 @@ function App() {
     },
     {
       id: 3,
-      title: 'Corporate Website',
+      title: 'RAG AI Assistant',
       description:
-        'Professional corporate website with modern design, responsive layout, and content management system.',
-      image: projectPlaceholder3,
-      technologies: ['Next.js', 'Tailwind CSS', 'Sanity CMS', 'Vercel'],
-      liveUrl: '#',
-      githubUrl: '#',
-    },
+        'A Retrieval-Augmented Generation (RAG) assistant built with LangChain, ChromaDB, and OpenAI. Users can upload PDFs and receive GPT-powered answers grounded in their documents, with source references and chat history.',
+      image: projectPlaceholder3, 
+      technologies: ['LangChain', 'ChromaDB', 'OpenAI API', 'Streamlit'],
+      liveUrl: 'https://your-app-url.com', // Replace with actual deployed URL
+      githubUrl: 'https://github.com/BengiNouri/rag-agent'
+    }
   ]
 
   // Grouped Skills & Tools
